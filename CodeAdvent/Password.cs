@@ -30,9 +30,7 @@ namespace CodeAdvent
             return charAmt <= upperBound && charAmt >= lowerBound;
         }
 
-        public bool Valid2()
-        {
-            return false;
-        }
+        public bool Valid2() =>
+            ((upperBound - 1 < text.Length) || (lowerBound - 1 > 0)) && ((text.ToCharArray()[lowerBound - 1] == ruleChar) ^ (text.ToCharArray()[upperBound - 1] == ruleChar));
     }
 }

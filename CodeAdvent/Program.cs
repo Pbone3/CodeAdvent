@@ -91,6 +91,7 @@ namespace CodeAdvent
                 case 2:
                     string[] passwords = input.Split("\n");
                     int matches = 0;
+                    int matches2 = 0;
 
                     foreach (string s in passwords)
                     {
@@ -98,9 +99,11 @@ namespace CodeAdvent
                         Password password = new Password(s);
                         if (password.Valid())
                             matches++;
+                        if (password.Valid2())
+                            matches2++;
                     }
 
-                    output = matches.ToString();
+                    output = $"Problem 2: {matches2} Problem 1: {matches}";
                     break;
 
             }
